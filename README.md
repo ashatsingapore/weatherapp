@@ -21,7 +21,7 @@ mvn test
 * To deploy the application please execute below command:
 
 ```sh
-mvm clean install run-war
+mvm clean install tomcat:run-war
 ```
 * After the application loads access using below URL:
 **[http://localhost:8080/weather](http://localhost:8080/weather)**
