@@ -21,7 +21,7 @@ Ext.define('Expedia.weather.WeatherInfo', {
         data = this.getData();
         tpl = new Ext.XTemplate(
             '<div name="weather-display-div" class="info-outer">'+
-                '<span class="info-inner">City : {city:trim} <br/> State : {state} <br/> Temperature : {temperature}</span>'+
+                '<span class="info-inner">City : {city:trim} <br/> State : {state} <br/> Temperature : {temperature}&deg; F</span>'+
             '</div>'
         ).applyTemplate(data);
 
