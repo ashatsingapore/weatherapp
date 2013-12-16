@@ -22,7 +22,6 @@ public class WeatherServiceImpl implements WeatherService {
 
     @Override
     public WeatherModel getWeatherByZip(String zipCode) throws MalformedURLException, IOException, RuntimeException, Exception {
-        System.out.println("WeatherServiceImpl called..");
         WunderGroundModel model = getConversionService().convert(weatherAdaptor.getWeatherDetails(zipCode), WunderGroundModel.class);
         return getConversionService().convert(model, WeatherModel.class);
     }

@@ -63,13 +63,13 @@ public class JsonObjConverter implements GenericConverter {
                     return model;
                 }
             } catch (JsonGenerationException e) {
-//                logger.error("Request format incorrect (or) Error in JSON Generation :", e);
+                e.printStackTrace();
             } catch (JsonMappingException e) {
-//                logger.error("Invalid Fields for Mapping :", e);
+                e.printStackTrace();
             } catch (IOException e) {
-//                logger.error("Error Reading/Writing objects :", e);
+                e.printStackTrace();
             } catch (Exception e) {
-//                logger.error("Error has occurred  :", e);
+                e.printStackTrace();
             }
         }
         return null;

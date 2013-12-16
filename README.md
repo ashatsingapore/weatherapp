@@ -3,41 +3,22 @@ weatherapp
 
 This application displays weather information based on US Zip Codes, this is created as a demo project with the usage of ExtJS &amp; Spring MVC.
 
-Project setup, installation, and configuration
+Project setup, configuration
 
-How do I, as a developer, start working on the project?
+Please ensure that maven is already configured.
+Navigate to weatherapp folder
 
-What dependencies does it have (where are they expressed) and how do I install them?
-Can I see the project working before I change anything?
 Testing
 
-How do I run the project's automated tests?
-
-Unit Tests
-
-Integration Tests
+To Run automated unit test cases, please execute the below command:
+mvn test
 
 Deploying
 
-How to setup the deployment environment
+To deploy the application please execute below command:
+mvm clean install run-war
 
-Addons, packages, or other dependencies required for deployment.
-Required environment variables or credentials not included in git.
-Monitoring services and logging.
-How to deploy
+After the application loads access using below URL:
+http://localhost:8080/weather
 
-Troubleshooting & useful tools
-
-Examples of common tasks
-
-e.g.
-
-How to make curl requests while authenticated via oauth.
-How to monitor background jobs.
-How to run the app through a proxy.
-Contributing changes
-
-See CONTRIB.md
-Licensing
-
-See LICENSE
+Please key-in some valid US Zip codes and test

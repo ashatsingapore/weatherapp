@@ -66,7 +66,6 @@ public class BaseHttpAdaptor implements ApplicationAdaptor {
      * @throws Exception
      */
     public String getHttpGET(String url) throws MalformedURLException, IOException, RuntimeException, Exception {
-        System.out.println("getHttpGET called..");
         HttpGet getMethod = new HttpGet(url);
         String responseBody = null;
         try {
@@ -80,7 +79,6 @@ public class BaseHttpAdaptor implements ApplicationAdaptor {
                     (httpResponse.getEntity().getContent())));
             String output;
             while ((output = br.readLine()) != null) {
-                System.out.println("getHttpGET output.." + output);
                 responseBody += output;
             }
         } catch (MalformedURLException e) {
@@ -94,7 +92,6 @@ public class BaseHttpAdaptor implements ApplicationAdaptor {
         } finally {
             getMethod.releaseConnection();
         }
-        System.out.println("getHttpGET output.." + responseBody);
         return responseBody;
     }
 

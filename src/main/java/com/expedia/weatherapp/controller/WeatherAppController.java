@@ -45,14 +45,12 @@ public class WeatherAppController {
     public @ResponseBody
     ResponseEntity<String> getWeatherByZip(@RequestParam("zipCode") String zipCode) {
 
-        String response = null;
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setContentType(MediaType.TEXT_HTML);
         try {
             if(zipCode.length() != 5) {
                 return new ResponseEntity<String>(String.format(ApplicationConstants.ACK_FAILURE_MESSAGE_JSON, getInvalidZip()), responseHeaders,  HttpStatus.BAD_REQUEST);
             }
-            System.out.println("WeatherAppController called..");
             ObjectMapper mapper = new ObjectMapper();
             mapper.disable(SerializationConfig.Feature.FAIL_ON_EMPTY_BEANS);
             String resp = mapper.writeValueAsString(weatherService.getWeatherByZip(zipCode));
