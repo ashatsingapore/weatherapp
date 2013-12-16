@@ -25,8 +25,6 @@ public class WeatherAdaptorImpl extends BaseHttpAdaptor implements WeatherAdapto
 
     @Override
     public String getWeatherDetails(String zipCode) throws MalformedURLException, IOException, RuntimeException, Exception {
-//        return getHttpGET("http://api.wunderground.com/api/" + wgKey + "/conditions/q/" + zipCode + ".json");
-        System.out.println("WeatherServiceImpl called..");
         return getHttpGET(ApplicationUtil.frameURL(null,weatherAPIHost,weatherAPIPort,String.format(serviceURI,wgKey,zipCode)));
     }
 
