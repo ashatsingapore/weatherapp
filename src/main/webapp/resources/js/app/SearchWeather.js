@@ -13,10 +13,14 @@ Ext.define('Expedia.weather.SearchWeather', {
         this.callParent(arguments);
     },
     initComponent: function(config){
+            this.loadingMask=this.myMask();
             this.callParent(arguments);
             this.on({
                scope: this
             });
+    },
+    myMask: function() {
+        return new Ext.LoadMask(Ext.getBody(), {msg:"Please wait..."});
     },
     items: [{
                 xtype: 'fieldset',
@@ -40,12 +44,14 @@ Ext.define('Expedia.weather.SearchWeather', {
             var formPnl = btn.up('panel');
             var form = formPnl.getForm();
             var zipCode = form.findField('zipCode').getSubmitValue();
+            formPnl.loadingMask.show();
             Ext.Ajax.request({ url: 'zipcode.json',
                 params: {'zipCode': zipCode},
                 jsonData: { },
                 method:'POST',
                 success: function(response, opts) {
                     resp =  eval('('+response.responseText+')');
+                    formPnl.loadingMask.hide();
                     Ext.fly('error-message-div').hide();
                     Ext.fly('weather-widget').show();
                     Ext.fly('weather-widget').update('');
@@ -55,6 +61,7 @@ Ext.define('Expedia.weather.SearchWeather', {
                     });
                 },
                 failure:function(response, opt) {
+                    formPnl.loadingMask.hide();
                     resp =  eval('('+response.responseText+')');
                     Ext.fly('weather-widget').hide();
                     Ext.fly('error-message-div').show();
