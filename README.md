@@ -7,7 +7,7 @@ This application displays weather information based on US Zip Codes, this is cre
 
 * Please ensure that maven is already configured.
 
-* Navigate to weatherapp folder
+* Download the weatherapp repository and Navigate to weatherapp folder
 
 ## Testing
 
