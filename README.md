@@ -5,20 +5,25 @@ This application displays weather information based on US Zip Codes, this is cre
 
 ## Project setup, configuration:
 
-*Please ensure that maven is already configured.
-*Navigate to weatherapp folder
+* Please ensure that maven is already configured.
+
+* Navigate to weatherapp folder
 
 ## Testing
 
 To Run automated unit test cases, please execute the below command:
+```sh
 mvn test
+```
 
 ## Deploying
 
-*To deploy the application please execute below command:
+* To deploy the application please execute below command:
+
+```sh
 mvm clean install run-war
+```
+* After the application loads access using below URL:
+**[http://localhost:8080/weather](http://localhost:8080/weather)**
 
-*After the application loads access using below URL:
-http://localhost:8080/weather
-
-*Please key-in some valid US Zip codes and test
+* Please key-in some valid US Zip codes and test
