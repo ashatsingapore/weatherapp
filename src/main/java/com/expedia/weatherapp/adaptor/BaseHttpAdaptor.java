@@ -37,7 +37,6 @@ public class BaseHttpAdaptor implements ApplicationAdaptor {
      */
     @PostConstruct
     public void initialize() {
-        System.out.println("Initializing BaseHttpAdaptor..");
         PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
         connectionManager.setMaxTotal(ApplicationConstants.HTTP_MAX_CONNECTIONS);
         connectionManager.setDefaultMaxPerRoute(ApplicationConstants.ROUTE_MAX_CONNECTIONS);
@@ -50,16 +49,8 @@ public class BaseHttpAdaptor implements ApplicationAdaptor {
         httpClient = HttpClients.custom()
                 .setConnectionManager(connectionManager)
                 .build();
-        System.out.println("Initializing BaseHttpAdaptor Complete!!");
     }
 
-/*    *//**
-     * Returns connection manager for customizing configuration
-     * @return
-     *//*
-    protected PoolingHttpClientConnectionManager getConnectionManager() {
-         return connectionManager;
-    }*/
 
     /**
      * Makes an HTTP GET call and returns the response content
