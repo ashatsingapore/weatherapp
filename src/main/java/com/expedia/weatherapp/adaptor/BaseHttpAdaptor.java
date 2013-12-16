@@ -51,13 +51,6 @@ public class BaseHttpAdaptor implements ApplicationAdaptor {
                 .build();
     }
 
-/*    *//**
-     * Returns connection manager for customizing configuration
-     * @return
-     *//*
-    protected PoolingHttpClientConnectionManager getConnectionManager() {
-         return connectionManager;
-    }*/
 
     /**
      * Makes an HTTP GET call and returns the response content
