@@ -3,7 +3,7 @@ weatherapp
 
 This application displays weather information based on US Zip Codes, this is created as a demo project with the usage of ExtJS &amp; Spring MVC.
 
-Project setup, configuration
+Project setup, configuration:
 
 Please ensure that maven is already configured.
 Navigate to weatherapp folder
