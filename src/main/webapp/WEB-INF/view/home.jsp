@@ -10,29 +10,40 @@
     <script type="text/javascript" src="resources/min/js/weatherapp-script.min.js"></script>
     <link rel="stylesheet" type="text/css" href="resources/css/ext-all-gray.css" />
     <style type="text/css">
-        body {
-          background: url('/weather/resources/images/backgrounds/home_bg_img.jpg') no-repeat center top #b7b7b7;
-          background-size: round auto; /* Height: auto is to keep aspect ratio */
-          background-repeat: repeat;
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
         }
-        .weather-info-table {
-            position: fixed;
-            padding-left:3px;
-            display:block;
-            position: center;
-            padding-top:120px;
-            padding-left:350px;
-            padding-right:5px;
+        body, body > div {
+            display: -webkit-box; display: -moz-box; display: box;
+            -webkit-box-orient: vertical;-moz-box-orient: vertical;box-orient: vertical;
+            -webkit-box-align: center;-moz-box-align: center;flex-align: center;
+            -webkit-box-pack: center;-moz-box-pack: center;flex-pack: center;
+        }
+        
+        body.weather-body {
+          background-image: url('/weather/resources/images/backgrounds/home_bg_img.jpg');
+          height: 100%;
+          width: 100%;
+          text-align:center;
+        }
+
+        .main-div {
+            vertical-align: middle;
+            text-align: center;
+            width: 600px;
+        } 
+
+        .child-div {
+            padding-top: 150px\9;
         }
         
         .weather-widget {
             font-size: 15px;
-            width: 300px;
             display: none;
-            position: center;
-            padding: 180px 20px 20px 40px;
-            padding:2px 4px;
-            margin:0px;
+            margin:0 auto;
             border:solid 1px #C0F0B9;
             background:#D5FFC6;
             color:#48A41C; 
@@ -41,10 +52,12 @@
             text-align:left;
         }
         
-
+        .weather-info-table {
+            margin:0 auto;
+        }
+        
         .error-message {
-            padding:2px 4px;
-            margin:0px;
+            margin:0 auto;
             display: none;
             border:solid 1px #FBD3C6;
             background:#FDE4E1;
@@ -52,20 +65,23 @@
             font-family:Arial, Helvetica, sans-serif;
             font-size:14px;
             font-weight:bold;
-            text-align:center;
         }
     </style>
 
 </head>
-<body>
-    <div class="error-message" id="error-message-div"><div id="error-message"></div></div>
-    <div class="weather-info-table">
-        <table>
-            <tr>
-                <td><div id="weather-form" ></div></td>
-                <td><div id="weather-widget" class="weather-widget"></div></td>
-            </tr>
-        </table>
+<body class="weather-body">
+    <div class="main-div">
+        <div class="child-div">
+            <div class="error-message" id="error-message-div"><div id="error-message"></div></div>
+            <div class="weather-info-table">
+                <table>
+                    <tr>
+                        <td><div id="weather-form" ></div></td>
+                        <td><div id="weather-widget" class="weather-widget"></div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
