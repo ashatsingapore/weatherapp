@@ -22,6 +22,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Mockito.when;
 
+/**
+ * JUnit test cases for service classes
+ * WebAppConfiguration can be used for testing MVC calls from spring 3.2 version onwards
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"/applicationContext-test.xml"})
 public class WeatherAppTest {

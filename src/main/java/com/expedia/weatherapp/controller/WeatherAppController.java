@@ -36,11 +36,23 @@ public class WeatherAppController {
     @Autowired
     private WeatherService weatherService;
 
+    /**
+     * Home context for loading the Search page
+     * @param model Model object
+     * @return Home page context
+     */
     @RequestMapping(value = {"/", "", "/home"}, method = RequestMethod.GET)
          public String landingPage(Model model) {
         return "home";
     }
 
+    /**
+     * Call for fetching the Zip code
+     * Valid annotations can also be used for validation of empty value check & length of the String
+     *
+     * @param zipCode Valid US Zip code
+     * @return Weather
+     */
     @RequestMapping(value = "/zipcode.json", method = {RequestMethod.GET, RequestMethod.POST}, produces = "application/json")
     public @ResponseBody
     ResponseEntity<String> getWeatherByZip(@RequestParam("zipCode") String zipCode) {
